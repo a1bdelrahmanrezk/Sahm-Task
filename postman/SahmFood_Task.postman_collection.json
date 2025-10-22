@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "a45933f6-261d-4a8f-9a96-7c3b2f750676",
+		"name": "SahmFood Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31089259",
+		"_collection_link": "https://abdelrahman-klsjdafi.postman.co/workspace/Projects~9ac3a605-c218-4ae8-9f23-e395f4d4e476/collection/31089259-a45933f6-261d-4a8f-9a96-7c3b2f750676?action=share&source=collection_link&creator=31089259"
+	},
+	"item": [
+		{
+			"name": "Authneticaiton",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "AbdoRezk",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "a@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Aa@12345",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "Aa@12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/api/auth/register",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "a@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Aa@12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/api/auth/login",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "a@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Aa@12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/api/auth/logout",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "get all tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{APP_URL}}/api/tasks",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{APP_URL}}/api/tasks/59",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"59"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "complete one task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{APP_URL}}/api/tasks/59/complete",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"59",
+								"complete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "first title",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "this is first description",
+									"type": "text"
+								},
+								{
+									"key": "due_date",
+									"value": "2025-12-08 12:20:21",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/api/tasks",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "first title updated",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "this is first description update also",
+									"type": "text"
+								},
+								{
+									"key": "due_date",
+									"value": "2025-12-08 12:20:21",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/api/tasks/59",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"59"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete one task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{APP_URL}}/api/tasks/59",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"59"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "APP_URL",
+			"value": ""
+		},
+		{
+			"key": "user_token",
+			"value": ""
+		}
+	]
+}

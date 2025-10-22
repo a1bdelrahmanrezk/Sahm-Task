@@ -1,3 +1,75 @@
+# Sahm Task [ Laravel - PostgreSQL - NodeJS - Docker - SwaggerUI - Node.js Notification Microservice ]
+
+## Setup Instructions   => From Terminal
+```bash
+composer install
+```
+```bash
+npm install
+```
+```bash
+cd notification-service\
+```
+```bash
+npm install
+```
+```bash
+cp .env.example .env
+```
+```bash
+php artisan key:generate
+```
+```bash
+php artisan serve
+```
+## Setup Instructions   => From Docker
+```bash
+docker-compose up --build
+```
+```bash
+docker exec -it laravel-app bash
+```
+```bash
+php artisan migrate
+```
+
+
+## API - Endpoints
+
+### Users / Authentication
+
+#### Public Endpoints
+- `POST /auth/register` - Register a new user
+- `POST /auth/login` - Login user
+
+#### Protected Endpoints (Require Authentication)
+- `POST /auth/logout` - Logout authenticated user
+
+#### Posts Management
+- `GET /tasks` – Display posts index
+- `GET /tasks/{task}` – Show a single task
+- `POST /tasks` – Create a new task
+- `PUT/PATCH /tasks/{task}` – Update a task
+- `DELETE /tasks/{task}` – Delete a task
+
+## PostMan Collection
+project-root/
+│
+├── postman/
+│   └── SahmFood_Task.postman_collection.json
+
+ [Click here to get the Postman Collection](./postman/SahmFood_Task.postman_collection.json)
+<!-- You can find a ready-to-use Postman collection inside the [`postman/`](./postman/) folder. -->
+
+### Import to Postman
+1. Open Postman.
+2. Click **Import**.
+3. Select the file:  
+
+
+<hr/>
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
